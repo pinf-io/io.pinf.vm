@@ -31,6 +31,8 @@ Architecture
           * Static Filesystem
           * NodeJS processes
           * [mod_php](http://php.net/manual/en/security.apache.php)
+      * [Apache](http://httpd.apache.org/)
+        * ...
 
   * **Server-Side Scripting** - All services are called from a [bash.origin](https://github.com/bash-origin/bash.origin)-based environment that provides:
 
