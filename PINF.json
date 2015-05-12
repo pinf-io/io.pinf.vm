@@ -1,0 +1,5 @@
+{
+	"@extends": {
+		"ScriptedCloud": "{{__DIRNAME__}}/../03-pinf.tools.ScriptedCloud/PINF.proto.json"
+	}
+}
