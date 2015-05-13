@@ -1,5 +1,16 @@
 {
-	"@extends": {
-		"ScriptedCloud": "{{__DIRNAME__}}/../03-pinf.tools.ScriptedCloud/PINF.proto.json"
-	}
+    "@extends": {
+        "ScriptedCloud": "{{__DIRNAME__}}/../03-pinf.tools.ScriptedCloud/PINF.proto.json"
+    },
+    "config": {
+        "ScriptedCloud.PINF.Tools/0": {
+            "topLevelDomain": "pinf.io",
+            "hostname": "{{env.PGS_WORKSPACE_UID}}.vm.pinf.io",
+            "dirname": "vm.pinf.io~{{env.PGS_WORKSPACE_UID}}",
+            "privateKeyPath": "{{env.HOME}}/.ssh/vm.pinf.io-{{env.PGS_WORKSPACE_UID}}.rsa"
+        }
+    },
+    "@overlays": [
+        "{{env.PIO_PROFILE_PATH}}"
+    ]
 }
