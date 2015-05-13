@@ -9,8 +9,5 @@
             "dirname": "vm.pinf.io~{{env.PGS_WORKSPACE_UID}}",
             "privateKeyPath": "{{env.HOME}}/.ssh/vm.pinf.io-{{env.PGS_WORKSPACE_UID}}.rsa"
         }
-    },
-    "@overlays": [
-        "{{env.PIO_PROFILE_PATH}}"
-    ]
+    }
 }
