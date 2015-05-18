@@ -20,7 +20,7 @@ Architecture
 
   * **Request Processing** - All socket requests can get routed through the following stack:
 
-    * **Global Proxy** - NodeJS-based for dynamic routing.
+    * **Global Proxy** - [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) based and pluggable dynamic routing server for HTTP and WebSockets over port 80.
       * Static Filesystem
       * NodeJS processes
       * [nginx](http://nginx.org/)
