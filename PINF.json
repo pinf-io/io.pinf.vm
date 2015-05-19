@@ -8,6 +8,72 @@
             "hostname": "{{env.PGS_WORKSPACE_UID}}.vm.pinf.io",
             "dirname": "vm.pinf.io~{{env.PGS_WORKSPACE_UID}}",
             "privateKeyPath": "{{env.HOME}}/.ssh/vm.pinf.io-{{env.PGS_WORKSPACE_UID}}.rsa"
+        },
+        "ScriptedCloud.PINF.Tools/boot/0": {
+            "$depends": [
+                "pio-deploy-services"
+            ],
+            "$depends_DISABLED": [
+                "pio-deploy-services"
+            ]
+        },
+        "github.com/pinf-to/pinf-to-openshift/0": {
+            "openshift": {
+                "cartridge": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master"
+            }
+        },
+        "github.com/pinf-io/io.pinf.pio.deploy/0": {
+            "$to": {
+                "pio-deploy-services": {
+                    "ssh": {
+                        "ip": "{{$from.server-services.vm.ip}}",
+                        "user": "{{$from.server-services.dropplet.sshUser}}",
+                        "privateKeyPath": "{{$from.server-services.dropplet.keyPath}}"
+                    },
+                    "env": "{{$from.server-services.env}}"
+                },
+                "pio-deploy-devtools": {
+                    "ssh": {
+                        "uri": "{{$from.server-devtools.app.ssh}}",
+                        "privateKeyPath": "{{$from.server-devtools.openshift.privateKeyPath}}"
+                    },
+                    "env": "{{$from.server-devtools.env}}"
+                }
+            }
         }
-    }
+    },
+    "mappings": {
+        "io.pinf.proxy": {
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.proxy~0/source/installed/master",
+            "install": true
+        },
+        "io.pinf.pio.postdeploy": {
+            "depends": [
+                "bash.origin"
+            ],
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.pio.postdeploy~0/source/installed/master",
+            "install": true
+        },
+        "io.pinf.pio.deploy": {
+            "depends": [
+                "io.pinf.pio.postdeploy",
+                "io.pinf.proxy",
+                "bash.origin"
+            ],
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.pio.deploy~0/source/installed/master",
+            "install": true
+        },
+        "pinf.io-for-openshift": {
+            "depends": [
+                "io.pinf.pio.postdeploy",
+                "io.pinf.proxy",
+                "bash.origin"
+            ],
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master",
+            "install": true
+        }
+    },
+    "@overlays": [
+        "{{env.PIO_PROFILE_PATH}}"
+    ]
 }

@@ -1,0 +1,12 @@
+[submodule ".deps/github.com~pinf-io~io.pinf.pio.postdeploy~0/source/installed/master"]
+	path = .deps/github.com~pinf-io~io.pinf.pio.postdeploy~0/source/installed/master
+	url = git@github.com:pinf-io/io.pinf.pio.postdeploy.git
+[submodule ".deps/github.com~pinf-io~io.pinf.pio.deploy~0/source/installed/master"]
+	path = .deps/github.com~pinf-io~io.pinf.pio.deploy~0/source/installed/master
+	url = git@github.com:pinf-io/io.pinf.pio.deploy.git
+[submodule ".deps/github.com~pinf-io~io.pinf.proxy~0/source/installed/master"]
+	path = .deps/github.com~pinf-io~io.pinf.proxy~0/source/installed/master
+	url = git@github.com:pinf-io/io.pinf.proxy.git
+[submodule ".deps/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master"]
+	path = .deps/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master
+	url = git@github.com:pinf-io/pinf.io-for-openshift.git
