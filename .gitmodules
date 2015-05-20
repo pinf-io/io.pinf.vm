@@ -10,3 +10,9 @@
 [submodule ".deps/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master"]
 	path = .deps/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master
 	url = git@github.com:pinf-io/pinf.io-for-openshift.git
+[submodule ".deps/github.com~pinf-to~pinf-to-process~0/source/installed/master"]
+	path = .deps/github.com~pinf-to~pinf-to-process~0/source/installed/master
+	url = git@github.com:pinf-to/pinf-to-process.git
+[submodule ".deps/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master"]
+	path = .deps/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master
+	url = git@github.com:pinf-io/pinf.io-for-ubuntu.git

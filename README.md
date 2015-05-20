@@ -20,19 +20,21 @@ Architecture
 
   * **Request Processing** - All socket requests can get routed through the following stack:
 
-    * **Global Proxy** - [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) based and pluggable dynamic routing server for HTTP and WebSockets over port 80.
-      * Static Filesystem
-      * NodeJS processes
-      * [nginx](http://nginx.org/)
+    * **Firewall** - Only configured ports are opened on the firewall.
+
+      * **Global Proxy** - [node-http-proxy](https://github.com/nodejitsu/node-http-proxy) based and pluggable dynamic routing server for HTTP and WebSockets over port 80.
         * Static Filesystem
         * NodeJS processes
-        * [PHP-FPM](http://php.net/manual/en/install.fpm.php)
-        * [Apache](http://httpd.apache.org/)
+        * [nginx](http://nginx.org/)
           * Static Filesystem
           * NodeJS processes
-          * [mod_php](http://php.net/manual/en/security.apache.php)
-      * [Apache](http://httpd.apache.org/)
-        * ...
+          * [PHP-FPM](http://php.net/manual/en/install.fpm.php)
+          * [Apache](http://httpd.apache.org/)
+            * Static Filesystem
+            * NodeJS processes
+            * [mod_php](http://php.net/manual/en/security.apache.php)
+        * [Apache](http://httpd.apache.org/)
+          * ...
 
   * **Server-Side Scripting** - All services are called from a [bash.origin](https://github.com/bash-origin/bash.origin)-based environment that provides:
 

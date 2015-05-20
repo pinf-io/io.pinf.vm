@@ -11,11 +11,31 @@
         },
         "ScriptedCloud.PINF.Tools/boot/0": {
             "$depends": [
-                "pio-deploy-services"
+                "pio-deploy-services",
+                "local-proxy"
             ],
             "$depends_DISABLED": [
-                "pio-deploy-services"
+                "pio-deploy-devtools"
             ]
+        },
+        "github.com/pinf-to/pinf-to-process/0": {
+            "$to": {
+                "local-proxy": {
+                    "basePath": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.proxy~0/source/installed/master",
+                    "commands": {
+                        "start": "node server.js"
+                    },
+                    "boot": {
+                        "config": "io.pinf.proxy/0"
+                    },
+                    "config": {
+                        "io.pinf.proxy/0": {
+                            "port": 8081,
+                            "host": "127.0.0.1"
+                        }
+                    }
+                }
+            }
         },
         "github.com/pinf-to/pinf-to-openshift/0": {
             "openshift": {
@@ -30,14 +50,64 @@
                         "user": "{{$from.server-services.dropplet.sshUser}}",
                         "privateKeyPath": "{{$from.server-services.dropplet.keyPath}}"
                     },
-                    "env": "{{$from.server-services.env}}"
+                    "env": "{{$from.server-services.env}}",
+                    "services": {
+                        "bash.origin": {
+                            "location": "bash.origin"
+                        },
+                        "pinf.io-for-ubuntu": {
+                            "depends": [
+                                "bash.origin"
+                            ],
+                            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master"
+                        },
+                        "io.pinf.pio.postdeploy": {
+                            "depends": [
+                                "bash.origin",
+                                "pinf.io-for-ubuntu"
+                            ],
+                            "location": "io.pinf.pio.postdeploy",
+                            "config": {
+                                "org.pinf.genesis.lib/0": {
+                                    "api": {
+                                        "consumes": {
+                                            "os-adapter": "pinf.io-for-ubuntu/0/os-adapter"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "io.pinf.proxy": {
+                            "depends": [
+                                "io.pinf.pio.postdeploy"
+                            ],
+                            "location": "io.pinf.proxy"
+                        }
+                    }
                 },
                 "pio-deploy-devtools": {
                     "ssh": {
                         "uri": "{{$from.server-devtools.app.ssh}}",
                         "privateKeyPath": "{{$from.server-devtools.openshift.privateKeyPath}}"
                     },
-                    "env": "{{$from.server-devtools.env}}"
+                    "env": "{{$from.server-devtools.env}}",
+                    "services": {
+                        "bash.origin": {
+                            "location": "bash.origin"
+                        },
+                        "io.pinf.pio.postdeploy": {
+                            "depends": [
+                                "bash.origin"
+                            ],
+                            "location": "io.pinf.pio.postdeploy"
+                        },
+                        "io.pinf.proxy": {
+                            "depends": [
+                                "io.pinf.pio.postdeploy"
+                            ],
+                            "location": "io.pinf.proxy"
+                        }
+                    }
                 }
             }
         }
@@ -58,7 +128,8 @@
             "depends": [
                 "io.pinf.pio.postdeploy",
                 "io.pinf.proxy",
-                "bash.origin"
+                "bash.origin",
+                "org.sourcemint.genesis.lib"
             ],
             "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.pio.deploy~0/source/installed/master",
             "install": true
@@ -70,6 +141,14 @@
                 "bash.origin"
             ],
             "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master",
+            "install": true
+        },
+        "pinf.io-for-ubuntu": {
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master",
+            "install": true
+        },
+        "pinf-to-process": {
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-to~pinf-to-process~0/source/installed/master",
             "install": true
         }
     },
