@@ -51,20 +51,34 @@
                         "privateKeyPath": "{{$from.server-services.dropplet.keyPath}}"
                     },
                     "env": "{{$from.server-services.env}}",
+                    "adapters": {
+                        "os": "pinf.io-for-ubuntu"
+                    },
                     "services": {
                         "bash.origin": {
                             "location": "bash.origin"
                         },
+                        "org.pinf.lib": {
+                            "location": "org.pinf.lib"
+                        },
+                        "org.pinf.genesis.lib": {
+                            "depends": [
+                                "org.pinf.lib"
+                            ],
+                            "location": "org.pinf.genesis.lib"
+                        },
                         "pinf.io-for-ubuntu": {
                             "depends": [
-                                "bash.origin"
+                                "bash.origin",
+                                "org.pinf.genesis.lib"
                             ],
-                            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master"
+                            "location": "pinf.io-for-ubuntu"
                         },
                         "io.pinf.pio.postdeploy": {
                             "depends": [
                                 "bash.origin",
-                                "pinf.io-for-ubuntu"
+                                "pinf.io-for-ubuntu",
+                                "org.pinf.genesis.lib"
                             ],
                             "location": "io.pinf.pio.postdeploy",
                             "config": {
