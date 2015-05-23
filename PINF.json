@@ -58,7 +58,23 @@
                         "bash.origin": {
                             "location": "bash.origin"
                         },
+                        "smi-for-npm": {
+                            "depends": [
+                                "bash.origin"
+                            ],
+                            "location": "smi-for-npm",
+                            "config": {
+                                "pio.pinf.io/0": {
+                                    "on": {
+                                        "postactivate": "$PIO_SERVICE_LIVE_INSTALL_DIRPATH/bin/link-to $PIO_BIN_DIRPATH/smi-for-npm"
+                                    }
+                                }
+                            }
+                        },
                         "org.pinf.lib": {
+                            "depends": [
+                                "smi-for-npm"
+                            ],
                             "location": "org.pinf.lib"
                         },
                         "org.pinf.genesis.lib": {
