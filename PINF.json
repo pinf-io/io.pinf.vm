@@ -58,15 +58,39 @@
                         "bash.origin": {
                             "location": "bash.origin"
                         },
-                        "smi-for-npm": {
+                        "pinf.io-for-ubuntu": {
                             "depends": [
                                 "bash.origin"
+                            ],
+                            "location": "pinf.io-for-ubuntu",
+                            "config": {
+                                "pio.pinf.io/0": {
+                                    "on": {
+                                        "postactivate": "bin/install"
+                                    }
+                                }
+                            }
+                        },
+                        "pinf-it-package-insight": {
+                            "depends": [
+                                "pinf.io-for-ubuntu"
+                            ],
+                            "location": "pinf-it-package-insight"
+                        },
+                        "smi-for-npm": {
+                            "depends": [
+                                "pinf.io-for-ubuntu",
+                                "bash.origin",
+                                "pinf-it-package-insight"
                             ],
                             "location": "smi-for-npm",
                             "config": {
                                 "pio.pinf.io/0": {
                                     "on": {
-                                        "postactivate": "$PIO_SERVICE_LIVE_INSTALL_DIRPATH/bin/link-to $PIO_BIN_DIRPATH/smi-for-npm"
+                                        "postactivate": [
+                                            "bin/link-to $PIO_BIN_DIRPATH/smi-for-npm",
+                                            "smi-for-npm relink"
+                                        ]
                                     }
                                 }
                             }
@@ -83,17 +107,26 @@
                             ],
                             "location": "org.pinf.genesis.lib"
                         },
-                        "pinf.io-for-ubuntu": {
+                        "pinf.io-for-unix": {
                             "depends": [
                                 "bash.origin",
                                 "org.pinf.genesis.lib"
                             ],
-                            "location": "pinf.io-for-ubuntu"
+                            "location": "pinf.io-for-unix",
+                            "config": {
+                                "org.pinf.genesis.lib/0": {
+                                    "api": {
+                                        "consumes": {
+                                            "FLAVOR": "pinf.io-for-ubuntu/0/manifested-os"
+                                        }
+                                    }
+                                }
+                            }
                         },
                         "io.pinf.pio.postdeploy": {
                             "depends": [
                                 "bash.origin",
-                                "pinf.io-for-ubuntu",
+                                "pinf.io-for-unix",
                                 "org.pinf.genesis.lib"
                             ],
                             "location": "io.pinf.pio.postdeploy",
@@ -101,7 +134,7 @@
                                 "org.pinf.genesis.lib/0": {
                                     "api": {
                                         "consumes": {
-                                            "os-adapter": "pinf.io-for-ubuntu/0/os-adapter"
+                                            "OS": "pinf.io-for-unix/0/virtual-os"
                                         }
                                     }
                                 }
@@ -174,7 +207,18 @@
             "install": true
         },
         "pinf.io-for-ubuntu": {
+            "depends": [
+                "bash.origin"
+            ],
             "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master",
+            "install": true
+        },
+        "pinf.io-for-unix": {
+            "depends": [
+                "bash.origin",
+                "org.pinf.genesis.lib"
+            ],
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-unix~0/source/installed/master",
             "install": true
         },
         "pinf-to-process": {
