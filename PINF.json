@@ -144,7 +144,16 @@
                             "depends": [
                                 "io.pinf.pio.postdeploy"
                             ],
-                            "location": "io.pinf.proxy"
+                            "location": "io.pinf.proxy",
+                            "boot": {
+                                "config": "io.pinf.proxy/0"
+                            },
+                            "config": {
+                                "io.pinf.proxy/0": {
+                                    "port": 8085,
+                                    "host": "127.0.0.1"
+                                }
+                            }
                         }
                     }
                 },
