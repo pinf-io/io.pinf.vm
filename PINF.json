@@ -189,21 +189,21 @@
             "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.proxy~0/source/installed/master",
             "install": true
         },
-        "io.pinf.pio.postdeploy": {
+        "io.pinf.pio.postsync": {
             "depends": [
                 "bash.origin"
             ],
-            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.pio.postdeploy~0/source/installed/master",
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.pio.postsync~0/source/installed/master",
             "install": true
         },
-        "io.pinf.pio.deploy": {
+        "io.pinf.pio.sync": {
             "depends": [
-                "io.pinf.pio.postdeploy",
+                "io.pinf.pio.postsync",
                 "io.pinf.proxy",
                 "bash.origin",
                 "org.sourcemint.genesis.lib"
             ],
-            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.pio.deploy~0/source/installed/master",
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.pio.sync~0/source/installed/master",
             "install": true
         },
         "pinf.io-for-openshift": {
