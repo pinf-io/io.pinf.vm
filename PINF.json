@@ -123,13 +123,13 @@
                                 }
                             }
                         },
-                        "io.pinf.pio.postdeploy": {
+                        "io.pinf.pio.postsync": {
                             "depends": [
                                 "bash.origin",
                                 "pinf.io-for-unix",
                                 "org.pinf.genesis.lib"
                             ],
-                            "location": "io.pinf.pio.postdeploy",
+                            "location": "io.pinf.pio.postsync",
                             "config": {
                                 "org.pinf.genesis.lib/0": {
                                     "api": {
@@ -142,7 +142,7 @@
                         },
                         "io.pinf.proxy": {
                             "depends": [
-                                "io.pinf.pio.postdeploy"
+                                "io.pinf.pio.postsync"
                             ],
                             "location": "io.pinf.proxy",
                             "boot": {
@@ -167,15 +167,15 @@
                         "bash.origin": {
                             "location": "bash.origin"
                         },
-                        "io.pinf.pio.postdeploy": {
+                        "io.pinf.pio.postsync": {
                             "depends": [
                                 "bash.origin"
                             ],
-                            "location": "io.pinf.pio.postdeploy"
+                            "location": "io.pinf.pio.postsync"
                         },
                         "io.pinf.proxy": {
                             "depends": [
-                                "io.pinf.pio.postdeploy"
+                                "io.pinf.pio.postsync"
                             ],
                             "location": "io.pinf.proxy"
                         }
@@ -208,7 +208,7 @@
         },
         "pinf.io-for-openshift": {
             "depends": [
-                "io.pinf.pio.postdeploy",
+                "io.pinf.pio.postsync",
                 "io.pinf.proxy",
                 "bash.origin"
             ],
