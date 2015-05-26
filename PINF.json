@@ -11,11 +11,11 @@
         },
         "ScriptedCloud.PINF.Tools/boot/0": {
             "$depends": [
-                "pio-deploy-services",
+                "pio-sync-services",
                 "local-proxy"
             ],
             "$depends_DISABLED": [
-                "pio-deploy-devtools"
+                "pio-sync-devtools"
             ]
         },
         "github.com/pinf-to/pinf-to-process/0": {
@@ -42,13 +42,17 @@
                 "cartridge": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master"
             }
         },
-        "github.com/pinf-io/io.pinf.pio.deploy/0": {
+        "github.com/pinf-io/io.pinf.pio.sync/0": {
             "$to": {
-                "pio-deploy-services": {
+                "pio-sync-services": {
                     "ssh": {
                         "ip": "{{$from.server-services.vm.ip}}",
                         "user": "{{$from.server-services.dropplet.sshUser}}",
                         "privateKeyPath": "{{$from.server-services.dropplet.keyPath}}"
+                    },
+                    "vfs": {
+                        "port": 8086,
+                        "host": "{{$from.server-services.vm.ip}}",
                     },
                     "env": "{{$from.server-services.env}}",
                     "adapters": {
@@ -140,9 +144,38 @@
                                 }
                             }
                         },
-                        "io.pinf.proxy": {
+                        "vfs-local": {
                             "depends": [
                                 "io.pinf.pio.postsync"
+                            ],
+                            "location": "vfs-local"
+                        },
+                        "vfs-socket": {
+                            "depends": [
+                                "vfs-local"
+                            ],
+                            "location": "vfs-socket"
+                        },
+                        "io.pinf.pio.sync": {
+                            "depends": [
+                                "io.pinf.pio.postsync",
+                                "vfs-local",
+                                "vfs-socket"
+                            ],
+                            "location": "io.pinf.pio.sync",
+                            "config": {
+                                "io.pinf.pio.sync/0": {
+                                    "vfs": {
+                                        "port": 8086,
+                                        "bind": "{{$from.server-services.vm.ip}}"
+                                    }
+                                }
+                            }
+                        },
+                        "io.pinf.proxy": {
+                            "depends": [
+                                "io.pinf.pio.postsync",
+                                "io.pinf.pio.sync"
                             ],
                             "location": "io.pinf.proxy",
                             "boot": {
@@ -151,13 +184,28 @@
                             "config": {
                                 "io.pinf.proxy/0": {
                                     "port": 8085,
-                                    "host": "127.0.0.1"
+                                    "bind": "{{$from.server-services.vm.ip}}",
+                                    "services": {
+                                        "io.pinf.pio.sync.vfs.rest": {
+                                            "implementation": "SYNC_VFS_REST"
+                                        }
+                                    },
+                                    "vhosts": {
+                                        "io-pinf-pio-sync-vfs-socket.{{$from.system.hostname}}": "{{$from.server-services.vm.ip}}:8086"
+                                    }
+                                },
+                                "org.pinf.genesis.lib/0": {
+                                    "api": {
+                                        "consumes": {
+                                            "SYNC_VFS_REST": "io.pinf.pio.sync/0/vfs-rest"
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
                 },
-                "pio-deploy-devtools": {
+                "pio-sync-devtools": {
                     "ssh": {
                         "uri": "{{$from.server-devtools.app.ssh}}",
                         "privateKeyPath": "{{$from.server-devtools.openshift.privateKeyPath}}"
@@ -196,12 +244,25 @@
             "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.pio.postsync~0/source/installed/master",
             "install": true
         },
+        "vfs-local": {
+            "location": "{{__DIRNAME__}}/.deps/github.com~SensePlatform~vfs-local~0/source/installed/master",
+            "install": true
+        },
+        "vfs-socket": {
+            "depends": [
+                "vfs-local"
+            ],
+            "location": "{{__DIRNAME__}}/.deps/github.com~c9~vfs-socket~0/source/installed/master",
+            "install": true
+        },
         "io.pinf.pio.sync": {
             "depends": [
                 "io.pinf.pio.postsync",
                 "io.pinf.proxy",
                 "bash.origin",
-                "org.sourcemint.genesis.lib"
+                "org.sourcemint.genesis.lib",
+                "vfs-socket",
+                "vfs-local"
             ],
             "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.pio.sync~0/source/installed/master",
             "install": true
