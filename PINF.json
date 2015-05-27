@@ -50,9 +50,10 @@
                         "user": "{{$from.server-services.dropplet.sshUser}}",
                         "privateKeyPath": "{{$from.server-services.dropplet.keyPath}}"
                     },
-                    "vfs": {
+                    "vfs-socket-server": {
                         "port": 8086,
-                        "host": "{{$from.server-services.vm.ip}}",
+                        "bind": "{{$from.server-services.vm.ip}}",
+                        "privateKeyPath": "{{$from.server-services.dropplet.keyPath}}"
                     },
                     "env": "{{$from.server-services.env}}",
                     "adapters": {
@@ -165,9 +166,10 @@
                             "location": "io.pinf.pio.sync",
                             "config": {
                                 "io.pinf.pio.sync/0": {
-                                    "vfs": {
+                                    "vfs-socket-server": {
                                         "port": 8086,
-                                        "bind": "{{$from.server-services.vm.ip}}"
+                                        "bind": "{{$from.server-services.vm.ip}}",
+                                        "publicKey": "{{$from.profile.keyPubPem}}"
                                     }
                                 }
                             }
@@ -252,7 +254,7 @@
             "depends": [
                 "vfs-local"
             ],
-            "location": "{{__DIRNAME__}}/.deps/github.com~c9~vfs-socket~0/source/installed/master",
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~vfs-socket~0/source/installed/master",
             "install": true
         },
         "io.pinf.pio.sync": {

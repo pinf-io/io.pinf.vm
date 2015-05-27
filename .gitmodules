@@ -22,6 +22,6 @@
 [submodule ".deps/github.com~SensePlatform~vfs-local~0/source/installed/master"]
 	path = .deps/github.com~SensePlatform~vfs-local~0/source/installed/master
 	url = git@github.com:SensePlatform/vfs-local.git
-[submodule ".deps/github.com~c9~vfs-socket~0/source/installed/master"]
-	path = .deps/github.com~c9~vfs-socket~0/source/installed/master
-	url = git@github.com:c9/vfs-socket.git
+[submodule ".deps/github.com~pinf-io~vfs-socket~0/source/installed/master"]
+	path = .deps/github.com~pinf-io~vfs-socket~0/source/installed/master
+	url = git@github.com:pinf-io/vfs-socket.git
