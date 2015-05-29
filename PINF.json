@@ -1,7 +1,7 @@
 {
     "@extends": {
         "ScriptedCloud": "{{__DIRNAME__}}/../03-pinf.tools.ScriptedCloud/PINF.proto.json",
-        "vm.pinf.io": "{{__DIRNAME__}}/PINF.proto.json"
+        "vm.pinf.io": "{{__DIRNAME__}}/PINF.core.json"
     },
     "config": {
         "ScriptedCloud.PINF.Tools/0": {
@@ -18,6 +18,35 @@
             "$depends_DISABLED": [
                 "pio-sync-devtools"
             ]
+        }
+    },
+    "mappings": {
+        "io.pinf.proxy": {
+            "install": true
+        },
+        "io.pinf.pio.postsync": {
+            "install": true
+        },
+        "vfs-local": {
+            "install": true
+        },
+        "vfs-socket": {
+            "install": true
+        },
+        "io.pinf.pio.sync": {
+            "install": true
+        },
+        "pinf.io-for-openshift": {
+            "install": true
+        },
+        "pinf.io-for-ubuntu": {
+            "install": true
+        },
+        "pinf.io-for-unix": {
+            "install": true
+        },
+        "pinf-to-process": {
+            "install": true
         }
     },
     "@overlays": [
