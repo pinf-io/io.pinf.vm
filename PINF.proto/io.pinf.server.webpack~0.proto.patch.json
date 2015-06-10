@@ -3,6 +3,7 @@
     "@args": {
         "PGS_WORKSPACE_ROOT": "",
         "PGS_PACKAGES_DIRPATH": "",
+        "install": false,
         "packs": {
             "local": {},
             "remote": {}
@@ -71,6 +72,10 @@
         [
             "$.mappings",
             {
+                "./../.deps/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master": {
+                    "location": "{{$.@args.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master",
+                    "install": false
+                },
                 "io.pinf.server.webpack": {
                     "depends": [
                         "bash.origin",
@@ -79,7 +84,7 @@
                     ],
                     "location": "{{$.@args.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master",
                     "giturl": "git@github.com:pinf-io/io.pinf.server.webpack.git",
-                    "install": true
+                    "install": "{{$.@args.install}}"
                 }
             }
         ]

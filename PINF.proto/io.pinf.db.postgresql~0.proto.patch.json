@@ -3,6 +3,7 @@
     "@args": {
         "PGS_WORKSPACE_ROOT": "",
         "PGS_PACKAGES_DIRPATH": "",
+        "install": false,
         "roles": {},
         "databases": {}
     },
@@ -43,10 +44,14 @@
         [
             "$.mappings",
             {
+                "./../.deps/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master": {
+                    "location": "{{$.@args.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
+                    "install": false
+                },
                 "io.pinf.db.postgresql": {
                     "location": "{{$.@args.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
                     "giturl": "git@github.com:pinf-io/io.pinf.db.postgresql.git",
-                    "install": false
+                    "install": "{{$.@args.install}}"
                 }
             }
         ]

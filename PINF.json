@@ -6,21 +6,24 @@
             "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.db.postgresql~0.proto.patch.json",
             "@args": {
                 "PGS_WORKSPACE_ROOT": "{{env.PGS_WORKSPACE_ROOT}}",
-                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}"
+                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}",
+                "install": true
             }
         },
         "io.pinf.server.grunt": {
             "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.server.grunt~0.proto.patch.json",
             "@args": {
                 "PGS_WORKSPACE_ROOT": "{{env.PGS_WORKSPACE_ROOT}}",
-                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}"
+                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}",
+                "install": true
             }
         },
         "io.pinf.server.webpack": {
             "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.server.webpack~0.proto.patch.json",
             "@args": {
                 "PGS_WORKSPACE_ROOT": "{{env.PGS_WORKSPACE_ROOT}}",
-                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}"
+                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}",
+                "install": true
             }
         }
     },
