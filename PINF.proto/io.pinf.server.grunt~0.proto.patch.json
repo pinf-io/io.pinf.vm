@@ -1,7 +1,8 @@
 {
     "@applicator": "org.pinf.lib/0/json-patch",
     "@args": {
-        "pgs": {},
+        "PGS_WORKSPACE_ROOT": "",
+        "PGS_PACKAGES_DIRPATH": "",
         "grunts": {
             "local": {},
             "remote": {}
@@ -20,7 +21,7 @@
                 "github.com/pinf-to/pinf-to-process/0": {
                     "$to": {
                         "grunt-service": {
-                            "basePath": "{{$.@args.pgs.workspaceRoot}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
+                            "basePath": "{{$.@args.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
                             "commands": {
                                 "start": "./bin/run-dev-server"
                             },
@@ -49,7 +50,7 @@
                                         "org.pinf.lib",
                                         "io.pinf.proxy"
                                     ],
-                                    "location": "{{$.@args.pgs.workspaceRoot}}/node_modules/io.pinf.server.grunt",
+                                    "location": "{{$.@args.PGS_WORKSPACE_ROOT}}/node_modules/io.pinf.server.grunt",
                                     "boot": {
                                         "config": "io.pinf.server.grunt/0"
                                     },
@@ -64,13 +65,6 @@
                             }
                         }
                     }
-                },
-                "github.com/sourcemint/smi-for-git/0": {
-                    "submodules": {
-                        "{{$.@args.pgs.workspaceRoot}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master": {
-                            "location": "git@github.com:pinf-io/io.pinf.server.grunt.git"
-                        }
-                    }
                 }
             }
         ],
@@ -83,7 +77,8 @@
                         "org.pinf.lib",
                         "org.pinf.genesis.lib"
                     ],
-                    "location": "{{$.@args.pgs.workspaceRoot}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
+                    "location": "{{$.@args.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
+                    "giturl": "git@github.com:pinf-io/io.pinf.server.grunt.git",
                     "install": true
                 }
             }

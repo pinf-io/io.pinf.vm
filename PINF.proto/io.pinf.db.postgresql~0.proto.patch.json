@@ -1,9 +1,10 @@
 {
     "@applicator": "org.pinf.lib/0/json-patch",
     "@args": {
-        "pgs": {},
+        "PGS_WORKSPACE_ROOT": "",
+        "PGS_PACKAGES_DIRPATH": "",
         "roles": {},
-        "databases": {},
+        "databases": {}
     },
     "patches": [
         [
@@ -23,7 +24,7 @@
                                     "depends": [
                                         "io.pinf.pio.postsync"
                                     ],
-                                    "location": "{{__DIRNAME__}}/node_modules/io.pinf.db.postgresql",
+                                    "location": "{{$.@args.PGS_WORKSPACE_ROOT}}/node_modules/io.pinf.db.postgresql",
                                     "config": {
                                         "io.pinf.db.postgresql/0": {
                                             "port": 8089,
@@ -36,13 +37,6 @@
                             }
                         }
                     }
-                },
-                "github.com/sourcemint/smi-for-git/0": {
-                    "submodules": {
-                        "{{$.@args.pgs.workspaceRoot}}/.deps/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master": {
-                            "location": "git@github.com:pinf-io/io.pinf.db.postgresql.git"
-                        }
-                    }
                 }
             }
         ],
@@ -50,7 +44,8 @@
             "$.mappings",
             {
                 "io.pinf.db.postgresql": {
-                    "location": "{{$.@args.pgs.workspaceRoot}}/.deps/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
+                    "location": "{{$.@args.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
+                    "giturl": "git@github.com:pinf-io/io.pinf.db.postgresql.git",
                     "install": false
                 }
             }
