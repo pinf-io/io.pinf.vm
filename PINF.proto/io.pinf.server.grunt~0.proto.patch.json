@@ -1,0 +1,92 @@
+{
+    "@applicator": "org.pinf.lib/0/json-patch",
+    "@args": {
+        "pgs": {},
+        "grunts": {
+            "local": {},
+            "remote": {}
+        }
+    },
+    "patches": [
+        [
+            "$.config['ScriptedCloud.PINF.Tools/boot/0'].$depends",
+            [
+                "pio-sync-services"
+            ]
+        ],
+        [
+            "$.config",
+            {
+                "github.com/pinf-to/pinf-to-process/0": {
+                    "$to": {
+                        "grunt-service": {
+                            "basePath": "{{$.@args.pgs.workspaceRoot}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
+                            "commands": {
+                                "start": "./bin/run-dev-server"
+                            },
+                            "boot": {
+                                "config": "io.pinf.server.grunt/0"
+                            },
+                            "config": {
+                                "io.pinf.server.grunt/0": {
+                                    "port": 8083,
+                                    "bind": "127.0.0.1",
+                                    "grunts": "{{$.@args.grunts.local}}"
+                                }
+                            }
+                        }
+                    }
+                },
+                "github.com/pinf-io/io.pinf.pio.sync/0": {
+                    "$to": {
+                        "pio-sync-services": {
+                            "services": {
+                                "io.pinf.server.grunt": {
+                                    "depends": [
+                                        "bash.origin",
+                                        "io.pinf.pio.postsync",
+                                        "org.pinf.genesis.lib",
+                                        "org.pinf.lib",
+                                        "io.pinf.proxy"
+                                    ],
+                                    "location": "{{$.@args.pgs.workspaceRoot}}/node_modules/io.pinf.server.grunt",
+                                    "boot": {
+                                        "config": "io.pinf.server.grunt/0"
+                                    },
+                                    "config": {
+                                        "io.pinf.server.grunt/0": {
+                                            "port": 8083,
+                                            "bind": "{{$from.server-services.vm.ip}}",
+                                            "grunts": "{{$.@args.grunts.remote}}"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "github.com/sourcemint/smi-for-git/0": {
+                    "submodules": {
+                        "{{$.@args.pgs.workspaceRoot}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master": {
+                            "location": "git@github.com:pinf-io/io.pinf.server.grunt.git"
+                        }
+                    }
+                }
+            }
+        ],
+        [
+            "$.mappings",
+            {
+                "io.pinf.server.grunt": {
+                    "depends": [
+                        "bash.origin",
+                        "org.pinf.lib",
+                        "org.pinf.genesis.lib"
+                    ],
+                    "location": "{{$.@args.pgs.workspaceRoot}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
+                    "install": true
+                }
+            }
+        ]
+    ]
+}

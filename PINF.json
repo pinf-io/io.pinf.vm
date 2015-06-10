@@ -1,7 +1,16 @@
 {
     "@extends": {
         "ScriptedCloud": "{{__DIRNAME__}}/../03-pinf.tools.ScriptedCloud/PINF.proto.json",
-        "vm.pinf.io": "{{__DIRNAME__}}/PINF.core.json"
+        "vm.pinf.io": "{{__DIRNAME__}}/PINF.core.json",
+        "io.pinf.db.postgresql": {
+            "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.db.postgresql~0.proto.patch.json"
+        },
+        "io.pinf.server.grunt": {
+            "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.server.grunt~0.proto.patch.json"
+        },
+        "io.pinf.server.webpack": {
+            "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.server.webpack~0.proto.patch.json"
+        }
     },
     "config": {
         "ScriptedCloud.PINF.Tools/0": {
