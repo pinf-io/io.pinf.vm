@@ -23,6 +23,7 @@
                             "services": {
                                 "io.pinf.db.postgresql": {
                                     "depends": [
+                                        "bash.origin",
                                         "io.pinf.pio.postsync"
                                     ],
                                     "location": "{{$.@args.PGS_WORKSPACE_ROOT}}/node_modules/io.pinf.db.postgresql",
@@ -51,7 +52,7 @@
                 "io.pinf.db.postgresql": {
                     "location": "{{__DIRNAME__}}/../.deps/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
                     "giturl": "git@github.com:pinf-io/io.pinf.db.postgresql.git",
-                    "install": "{{$.@args.install}}"
+                    "install": false
                 }
             }
         ]

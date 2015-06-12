@@ -2,6 +2,9 @@
     "@extends": {
         "ScriptedCloud": "{{__DIRNAME__}}/../03-pinf.tools.ScriptedCloud/PINF.proto.json",
         "vm.pinf.io": "{{__DIRNAME__}}/PINF.core.json",
+        "to.pinf.dnsimple": {
+            "location": "{{__DIRNAME__}}/../03-pinf.tools.ScriptedCloud/PINF.proto/to.pinf.dnsimple.proto.patch.json"
+        },
         "io.pinf.db.postgresql": {
             "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.db.postgresql~0.proto.patch.json",
             "@args": {
@@ -36,6 +39,7 @@
         },
         "ScriptedCloud.PINF.Tools/boot/0": {
             "$depends": [
+                "dns",
                 "pio-sync-services",
                 "services-proxy"
             ],
