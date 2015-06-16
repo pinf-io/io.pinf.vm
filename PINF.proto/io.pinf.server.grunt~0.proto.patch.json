@@ -29,6 +29,10 @@
                             "boot": {
                                 "config": "io.pinf.server.grunt/0"
                             },
+                            "env": {
+                                "VERBOSE": "1",
+                                "DEBUG": "1"
+                            },
                             "config": {
                                 "io.pinf.server.grunt/0": {
                                     "port": 8083,

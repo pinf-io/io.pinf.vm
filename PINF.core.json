@@ -3,7 +3,7 @@
         "github.com/pinf-to/pinf-to-process/0": {
             "$to": {
                 "services-proxy": {
-                    "basePath": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.proxy~0/source/installed/master",
+                    "basePath": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.proxy~0/source/installed/master",
                     "commands": {
                         "start": "node server.js"
                     },
@@ -21,7 +21,7 @@
         },
         "github.com/pinf-to/pinf-to-openshift/0": {
             "openshift": {
-                "cartridge": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master"
+                "cartridge": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master"
             }
         },
         "github.com/pinf-io/io.pinf.pio.sync/0": {
