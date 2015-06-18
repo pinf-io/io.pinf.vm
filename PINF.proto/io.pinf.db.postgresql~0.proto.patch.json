@@ -9,12 +9,6 @@
     },
     "patches": [
         [
-            "$.config['ScriptedCloud.PINF.Tools/boot/0'].$depends",
-            [
-                "pio-sync-services"
-            ]
-        ],
-        [
             "$.config",
             {
                 "github.com/pinf-io/io.pinf.pio.sync/0": {
