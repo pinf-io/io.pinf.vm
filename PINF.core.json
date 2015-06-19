@@ -188,30 +188,6 @@
                             }
                         }
                     }
-                },
-                "pio-sync-devtools": {
-                    "ssh": {
-                        "uri": "{{$from.server-devtools.app.ssh}}",
-                        "privateKeyPath": "{{$from.server-devtools.openshift.privateKeyPath}}"
-                    },
-                    "env": "{{$from.server-devtools.env}}",
-                    "services": {
-                        "bash.origin": {
-                            "location": "bash.origin"
-                        },
-                        "io.pinf.pio.postsync": {
-                            "depends": [
-                                "bash.origin"
-                            ],
-                            "location": "io.pinf.pio.postsync"
-                        },
-                        "io.pinf.proxy": {
-                            "depends": [
-                                "io.pinf.pio.postsync"
-                            ],
-                            "location": "io.pinf.proxy"
-                        }
-                    }
                 }
             }
         }
