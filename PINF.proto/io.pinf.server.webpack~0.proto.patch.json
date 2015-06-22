@@ -1,8 +1,5 @@
 {
-    "@applicator": "org.pinf.lib/0/json-patch",
     "@args": {
-        "PGS_WORKSPACE_ROOT": "",
-        "PGS_PACKAGES_DIRPATH": "",
         "install": false,
         "packs": {
             "local": {},
@@ -16,7 +13,7 @@
                 "github.com/pinf-to/pinf-to-process/0": {
                     "$to": {
                         "webpack-service": {
-                            "basePath": "{{$.@args.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master",
+                            "basePath": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master",
                             "commands": {
                                 "start": "./bin/run-dev-server"
                             },
@@ -45,7 +42,7 @@
                                         "org.pinf.lib",
                                         "io.pinf.proxy"
                                     ],
-                                    "location": "{{$.@args.PGS_WORKSPACE_ROOT}}/node_modules/io.pinf.server.webpack",
+                                    "location": "{{env.PGS_WORKSPACE_ROOT}}/node_modules/io.pinf.server.webpack",
                                     "boot": {
                                         "config": "io.pinf.server.webpack/0"
                                     },

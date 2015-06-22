@@ -1,91 +1,80 @@
 {
-    "@applicator": "org.pinf.lib/0/json-patch",
     "@args": {
-        "PGS_WORKSPACE_ROOT": "",
-        "PGS_PACKAGES_DIRPATH": "",
         "install": false,
         "grunts": {
             "local": {},
             "remote": {}
         }
     },
-    "patches": [
-        [
-            "$.config",
-            {
-                "github.com/pinf-to/pinf-to-process/0": {
-                    "$to": {
-                        "grunt-service": {
-                            "basePath": "{{$.@args.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
-                            "commands": {
-                                "start": "./bin/run-dev-server"
-                            },
+    "config": {
+        "github.com/pinf-to/pinf-to-process/0": {
+            "$to": {
+                "grunt-service": {
+                    "basePath": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
+                    "commands": {
+                        "start": "./bin/run-dev-server"
+                    },
+                    "boot": {
+                        "config": "io.pinf.server.grunt/0"
+                    },
+                    "env": {
+                        "VERBOSE": "1",
+                        "DEBUG": "1"
+                    },
+                    "config": {
+                        "io.pinf.server.grunt/0": {
+                            "port": 8083,
+                            "bind": "127.0.0.1",
+                            "grunts": "{{$.@args.grunts.local}}"
+                        }
+                    }
+                }
+            }
+        },
+        "github.com/pinf-io/io.pinf.pio.sync/0": {
+            "$to": {
+                "pio-sync-services": {
+                    "services": {
+                        "io.pinf.server.grunt": {
+                            "depends": [
+                                "bash.origin",
+                                "io.pinf.pio.postsync",
+                                "org.pinf.genesis.lib",
+                                "org.pinf.lib",
+                                "io.pinf.proxy"
+                            ],
+                            "location": "{{env.PGS_WORKSPACE_ROOT}}/node_modules/io.pinf.server.grunt",
                             "boot": {
                                 "config": "io.pinf.server.grunt/0"
-                            },
-                            "env": {
-                                "VERBOSE": "1",
-                                "DEBUG": "1"
                             },
                             "config": {
                                 "io.pinf.server.grunt/0": {
                                     "port": 8083,
-                                    "bind": "127.0.0.1",
-                                    "grunts": "{{$.@args.grunts.local}}"
-                                }
-                            }
-                        }
-                    }
-                },
-                "github.com/pinf-io/io.pinf.pio.sync/0": {
-                    "$to": {
-                        "pio-sync-services": {
-                            "services": {
-                                "io.pinf.server.grunt": {
-                                    "depends": [
-                                        "bash.origin",
-                                        "io.pinf.pio.postsync",
-                                        "org.pinf.genesis.lib",
-                                        "org.pinf.lib",
-                                        "io.pinf.proxy"
-                                    ],
-                                    "location": "{{$.@args.PGS_WORKSPACE_ROOT}}/node_modules/io.pinf.server.grunt",
-                                    "boot": {
-                                        "config": "io.pinf.server.grunt/0"
-                                    },
-                                    "config": {
-                                        "io.pinf.server.grunt/0": {
-                                            "port": 8083,
-                                            "bind": "{{$from.server-services.vm.ip}}",
-                                            "grunts": "{{$.@args.grunts.remote}}"
-                                        }
-                                    }
+                                    "bind": "{{$from.server-services.vm.ip}}",
+                                    "grunts": "{{$.@args.grunts.remote}}"
                                 }
                             }
                         }
                     }
                 }
             }
-        ],
-        [
-            "$.mappings",
-            {
-                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master": {
-                    "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
-                    "install": false
-                },
-                "io.pinf.server.grunt": {
-                    "depends": [
-                        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
-                        "bash.origin",
-                        "org.pinf.lib",
-                        "org.pinf.genesis.lib"
-                    ],
-                    "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
-                    "giturl": "git@github.com:pinf-io/io.pinf.server.grunt.git",
-                    "install": "{{$.@args.install}}"
-                }
-            }
-        ]
-    ]
+        }
+    },
+    "mappings": {
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master": {
+            "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
+            "install": false
+        },
+        "io.pinf.server.grunt": {
+            "depends": [
+                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
+                "bash.origin",
+                "org.pinf.lib",
+                "org.pinf.genesis.lib"
+            ],
+            "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
+            "giturl": "git@github.com:pinf-io/io.pinf.server.grunt.git",
+            "install": "{{$.@args.install}}"
+        }
+    }
 }

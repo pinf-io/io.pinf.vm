@@ -1,57 +1,46 @@
 {
-    "@applicator": "org.pinf.lib/0/json-patch",
     "@args": {
-        "PGS_WORKSPACE_ROOT": "",
-        "PGS_PACKAGES_DIRPATH": "",
         "install": false,
         "roles": {},
         "databases": {}
     },
-    "patches": [
-        [
-            "$.config",
-            {
-                "github.com/pinf-io/io.pinf.pio.sync/0": {
-                    "$to": {
-                        "pio-sync-services": {
-                            "services": {
-                                "io.pinf.db.postgresql": {
-                                    "depends": [
-                                        "bash.origin",
-                                        "io.pinf.pio.postsync"
-                                    ],
-                                    "location": "{{$.@args.PGS_WORKSPACE_ROOT}}/node_modules/io.pinf.db.postgresql",
-                                    "config": {
-                                        "io.pinf.db.postgresql/0": {
-                                            "port": 8089,
-                                            "bind": "{{$from.server-services.vm.ip}}",
-                                            "roles": "{{$.@args.roles}}",
-                                            "databases": "{{$.@args.databases}}"
-                                        }
-                                    }
+    "config": {
+        "github.com/pinf-io/io.pinf.pio.sync/0": {
+            "$to": {
+                "pio-sync-services": {
+                    "services": {
+                        "io.pinf.db.postgresql": {
+                            "depends": [
+                                "bash.origin",
+                                "io.pinf.pio.postsync"
+                            ],
+                            "location": "{{env.PGS_WORKSPACE_ROOT}}/node_modules/io.pinf.db.postgresql",
+                            "config": {
+                                "io.pinf.db.postgresql/0": {
+                                    "port": 8089,
+                                    "bind": "{{$from.server-services.vm.ip}}",
+                                    "roles": "{{$.@args.roles}}",
+                                    "databases": "{{$.@args.databases}}"
                                 }
                             }
                         }
                     }
                 }
             }
-        ],
-        [
-            "$.mappings",
-            {
-                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master": {
-                    "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
-                    "install": false
-                },
-                "io.pinf.db.postgresql": {
-                    "depends": [
-                        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master"
-                    ],
-                    "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
-                    "giturl": "git@github.com:pinf-io/io.pinf.db.postgresql.git",
-                    "install": false
-                }
-            }
-        ]
-    ]
+        }
+    },
+    "mappings": {
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master": {
+            "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
+            "install": false
+        },
+        "io.pinf.db.postgresql": {
+            "depends": [
+                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master"
+            ],
+            "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
+            "giturl": "git@github.com:pinf-io/io.pinf.db.postgresql.git",
+            "install": false
+        }
+    }
 }
