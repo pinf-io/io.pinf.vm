@@ -31,14 +31,14 @@
     },
     "mappings": {
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master": {
-            "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
             "install": false
         },
         "io.pinf.db.postgresql": {
             "depends": [
                 "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master"
             ],
-            "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
             "giturl": "git@github.com:pinf-io/io.pinf.db.postgresql.git",
             "install": false
         }

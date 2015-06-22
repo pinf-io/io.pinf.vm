@@ -62,7 +62,7 @@
     },
     "mappings": {
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master": {
-            "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
             "install": false
         },
         "io.pinf.server.grunt": {
@@ -72,7 +72,7 @@
                 "org.pinf.lib",
                 "org.pinf.genesis.lib"
             ],
-            "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
             "giturl": "git@github.com:pinf-io/io.pinf.server.grunt.git",
             "install": "{{$.@args.install}}"
         }
