@@ -326,7 +326,7 @@
             "location": "git@github.com:pinf-io/io.pinf.server.webpack.git#338601b238be616ea020e6f110cd90b1d6aacfec(master)"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/03-vm.pinf.io": {
-            "location": "git@github.com:pinf-io/io.pinf.vm.git#3847a74e95726ef9b5f7dfa15a075a3a2f42d605(master)",
+            "location": "git@github.com:pinf-io/io.pinf.vm.git#35355eceaf2f2140a9118002690e660acee1ecc6(master)",
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~sourcemint~sm.resolve~0/source/installed/master": {
@@ -384,63 +384,63 @@
             "location": "git@github.com:pinf-io/io.pinf.proxy.git#30d9982082be8172aefb62df873b403ed34ee7a5"
         },
         "io.pinf.proxy": {
-            "location": ".deps/github.com~pinf-io~io.pinf.proxy~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.proxy~0/source/installed/master",
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.postsync~0/source/installed/master": {
             "location": "git@github.com:pinf-io/io.pinf.pio.postsync.git#d8f94c32130d34b9eca0fe75d4a29a306248d2bf"
         },
         "io.pinf.pio.postsync": {
-            "location": ".deps/github.com~pinf-io~io.pinf.pio.postsync~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.postsync~0/source/installed/master",
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~SensePlatform~vfs-local~0/source/installed/master": {
             "location": "git@github.com:SensePlatform/vfs-local.git#022f736db8e437a49e7ea81013fb5bb30e9a7e4d"
         },
         "vfs-local": {
-            "location": ".deps/github.com~SensePlatform~vfs-local~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~SensePlatform~vfs-local~0/source/installed/master",
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~vfs-socket~0/source/installed/master": {
             "location": "git@github.com:pinf-io/vfs-socket.git#aa7c9f3a87ad12840ed9539658469a323208f690(master)"
         },
         "vfs-socket": {
-            "location": ".deps/github.com~pinf-io~vfs-socket~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~vfs-socket~0/source/installed/master",
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.sync~0/source/installed/master": {
             "location": "git@github.com:pinf-io/io.pinf.pio.sync.git#76a0f501a36c0f4e821e827c9d851fe1a41ffc81"
         },
         "io.pinf.pio.sync": {
-            "location": ".deps/github.com~pinf-io~io.pinf.pio.sync~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.sync~0/source/installed/master",
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master": {
             "location": "git@github.com:pinf-io/pinf.io-for-openshift.git#780269ba97eb767d43739fa1e8d8dad0270d2fc8"
         },
         "pinf.io-for-openshift": {
-            "location": ".deps/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master",
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master": {
             "location": "git@github.com:pinf-io/pinf.io-for-ubuntu.git#0f81e3dc090be101a81f19e2eaae829bfc54e846"
         },
         "pinf.io-for-ubuntu": {
-            "location": ".deps/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master",
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-unix~0/source/installed/master": {
             "location": "git@github.com:pinf-io/pinf.io-for-unix.git#d2933e77618b74bf7aba8b017553bea42723d31a"
         },
         "pinf.io-for-unix": {
-            "location": ".deps/github.com~pinf-io~pinf.io-for-unix~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-unix~0/source/installed/master",
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-process~0/source/installed/master": {
             "location": "git@github.com:pinf-to/pinf-to-process.git#118de54b4e31eb42c7d6c7ebdde72808d8d7e12d(master)"
         },
         "pinf-to-process": {
-            "location": ".deps/github.com~pinf-to~pinf-to-process~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-process~0/source/installed/master",
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-openshift~0/source/installed/master": {
@@ -473,5 +473,87 @@
             "location": "{{env.PGS_PACKAGES_DIRPATH}}/03-vm.pinf.io/PINF.core.json",
             "@args": {}
         }
+    },
+    "dependencies": {
+        "q": "1.4.1",
+        "deepcopy": "0.5.0",
+        "escape-regexp-component": "1.0.2",
+        "fs-extra": "0.19.0",
+        "graceful-fs": "3.0.8",
+        "async": "0.7.0",
+        "colors": "1.1.2",
+        "commander": "2.8.1",
+        "deepequal": "0.0.1",
+        "deepmerge": "0.2.10",
+        "dirsum": "0.1.1",
+        "glob": "5.0.10",
+        "mfs": "0.1.1",
+        "moment": "2.10.3",
+        "pinf-it-filetree-insight": "0.1.1",
+        "request": "2.58.0",
+        "require.async": "0.1.1",
+        "smi.cache": "0.3.1",
+        "touch": "0.0.3",
+        "waitfor": "0.1.3",
+        "org.pinf.lib": "0.1.5",
+        "babel": "4.7.16",
+        "pinf-primitives-js": "0.2.0",
+        "bash.origin": "0.1.23",
+        "fswalker": "0.1.0",
+        "json-stable-stringify": "1.0.0",
+        "pinf-it-package-insight": "0.1.8",
+        "semver": "4.3.6",
+        "inquirer": "0.8.5",
+        "ncp": "2.0.0",
+        "org.pinf.genesis.lib": "0.1.3",
+        "to.pinf.lib": "0.1.0",
+        "gulp": "3.9.0",
+        "gulp-debug": "2.0.1",
+        "gulp-edit": "0.0.1",
+        "gulp-filter": "2.0.2",
+        "gulp-plumber": "0.6.6",
+        "gulp-rename": "1.2.2",
+        "gulp-replace": "0.5.3",
+        "gulp-watch": "4.2.4",
+        "extend": "2.0.1",
+        "jsonwebtoken": "5.0.2",
+        "node-forge": "0.6.30",
+        "pinf-it-program-insight": "0.1.3",
+        "winston": "0.9.0",
+        "JSONPath": "0.11.0",
+        "changeset": "0.1.0",
+        "q-throttle": "0.1.0",
+        "bunyan": "1.4.0",
+        "http-hash-router": "1.1.0",
+        "stack": "0.1.0",
+        "ws": "0.7.2",
+        "simple-mime": "0.0.8",
+        "pty.js": "0.2.7-1",
+        "smith": "0.1.22",
+        "jsonrpc-lite": "1.0.0",
+        "mux-demux": "3.7.9",
+        "org.sourcemint.genesis.lib": "0.1.0",
+        "stream-router": "0.1.0",
+        "vfs-http-adapter": "0.2.3",
+        "vfs-lint": "0.0.1",
+        "q-io": "1.13.1",
+        "aws-sdk": "2.1.35",
+        "uuid": "2.0.1",
+        "do-wrapper": "0.1.0",
+        "express": "4.13.0",
+        "grunt": "0.4.5",
+        "grunt-bower-concat": "0.5.0",
+        "grunt-contrib-watch": "0.6.1",
+        "send": "0.12.3",
+        "css-loader": "0.14.5",
+        "file-loader": "0.8.4",
+        "jsx-loader": "0.13.2",
+        "less": "2.5.1",
+        "less-loader": "2.2.0",
+        "node-libs-browser": "0.5.2",
+        "react-hot-loader": "1.2.7",
+        "style-loader": "0.12.3",
+        "url-loader": "0.5.6",
+        "webpack": "1.9.11"
     }
 }
