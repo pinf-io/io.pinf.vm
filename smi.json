@@ -326,7 +326,7 @@
             "location": "git@github.com:pinf-io/io.pinf.server.webpack.git#338601b238be616ea020e6f110cd90b1d6aacfec(master)"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/03-vm.pinf.io": {
-            "location": "git@github.com:pinf-io/io.pinf.vm.git#35355eceaf2f2140a9118002690e660acee1ecc6(master)",
+            "location": "git@github.com:pinf-io/io.pinf.vm.git#1c2134a3069078ddef19c3832e8984d38116f63b(wip)",
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~sourcemint~sm.resolve~0/source/installed/master": {
@@ -402,7 +402,7 @@
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~vfs-socket~0/source/installed/master": {
-            "location": "git@github.com:pinf-io/vfs-socket.git#aa7c9f3a87ad12840ed9539658469a323208f690(master)"
+            "location": "git@github.com:pinf-io/vfs-socket.git#aa7c9f3a87ad12840ed9539658469a323208f690"
         },
         "vfs-socket": {
             "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~vfs-socket~0/source/installed/master",
@@ -437,7 +437,7 @@
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-process~0/source/installed/master": {
-            "location": "git@github.com:pinf-to/pinf-to-process.git#118de54b4e31eb42c7d6c7ebdde72808d8d7e12d(master)"
+            "location": "git@github.com:pinf-to/pinf-to-process.git#118de54b4e31eb42c7d6c7ebdde72808d8d7e12d"
         },
         "pinf-to-process": {
             "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-process~0/source/installed/master",
@@ -466,6 +466,15 @@
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-travis-ci~0/source/installed/master": {
             "location": "git@github.com:pinf-to/pinf-to-travis-ci.git#d45bc6093a8776493800ed6ec3b4016a45540f8e"
+        },
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master": {
+            "location": "git@github.com:pinf-io/io.pinf.db.postgresql.git#52687811132b733325736b5bbdcb73372cf03354"
+        },
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master": {
+            "location": "git@github.com:pinf-io/io.pinf.server.grunt.git#9e4cd27a9b4c6c196e18dbdc20b69a011b919779"
+        },
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master": {
+            "location": "git@github.com:pinf-io/io.pinf.server.webpack.git#338601b238be616ea020e6f110cd90b1d6aacfec"
         }
     },
     "@extends": {
@@ -478,7 +487,7 @@
         "q": "1.4.1",
         "deepcopy": "0.5.0",
         "escape-regexp-component": "1.0.2",
-        "fs-extra": "0.19.0",
+        "fs-extra": "0.18.4",
         "graceful-fs": "3.0.8",
         "async": "0.7.0",
         "colors": "1.1.2",
