@@ -7,34 +7,6 @@
             "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.proxy~0/source/installed/master",
             "install": false
         },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.postsync~0/source/installed/master": {
-            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.pio.postsync~0/source/installed/master",
-            "install": false
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~SensePlatform~vfs-local~0/source/installed/master": {
-            "location": "{{__DIRNAME__}}/.deps/github.com~SensePlatform~vfs-local~0/source/installed/master",
-            "install": false
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~vfs-socket~0/source/installed/master": {
-            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~vfs-socket~0/source/installed/master",
-            "install": false
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.sync~0/source/installed/master": {
-            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.pio.sync~0/source/installed/master",
-            "install": false
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master": {
-            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master",
-            "install": false
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master": {
-            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master",
-            "install": false
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-unix~0/source/installed/master": {
-            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-unix~0/source/installed/master",
-            "install": false
-        },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-process~0/source/installed/master": {
             "location": "{{__DIRNAME__}}/.deps/github.com~pinf-to~pinf-to-process~0/source/installed/master",
             "install": false
@@ -42,48 +14,6 @@
         "io.pinf.proxy": {
             "depends": [
                 "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.proxy~0/source/installed/master"
-            ],
-            "install": false
-        },
-        "io.pinf.pio.postsync": {
-            "depends": [
-                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.postsync~0/source/installed/master"
-            ],
-            "install": false
-        },
-        "vfs-local": {
-            "depends": [
-                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~SensePlatform~vfs-local~0/source/installed/master"
-            ],
-            "install": false
-        },
-        "vfs-socket": {
-            "depends": [
-                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~vfs-socket~0/source/installed/master"
-            ],
-            "install": false
-        },
-        "io.pinf.pio.sync": {
-            "depends": [
-                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.sync~0/source/installed/master"
-            ],
-            "install": false
-        },
-        "pinf.io-for-openshift": {
-            "depends": [
-                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master"
-            ],
-            "install": false
-        },
-        "pinf.io-for-ubuntu": {
-            "depends": [
-                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master"
-            ],
-            "install": false
-        },
-        "pinf.io-for-unix": {
-            "depends": [
-                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-unix~0/source/installed/master"
             ],
             "install": false
         },
