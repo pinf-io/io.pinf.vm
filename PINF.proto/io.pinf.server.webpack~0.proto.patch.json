@@ -67,7 +67,7 @@
             "$.mappings",
             {
                 "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master": {
-                    "location": "{{__DIRNAME__}}/../.deps/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master",
+                    "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master",
                     "install": false
                 },
                 "io.pinf.server.webpack": {
@@ -77,7 +77,7 @@
                         "org.pinf.lib",
                         "org.pinf.genesis.lib"
                     ],
-                    "location": "{{__DIRNAME__}}/../.deps/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master",
+                    "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master",
                     "giturl": "git@github.com:pinf-io/io.pinf.server.webpack.git",
                     "install": "{{$.@args.install}}"
                 }

@@ -197,22 +197,22 @@
             "depends": [
                 "org.pinf.genesis.lib"
             ],
-            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.proxy~0/source/installed/master"
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.proxy~0/source/installed/master"
         },
         "io.pinf.pio.postsync": {
             "depends": [
                 "bash.origin"
             ],
-            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.postsync~0/source/installed/master"
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.pio.postsync~0/source/installed/master"
         },
         "vfs-local": {
-            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~SensePlatform~vfs-local~0/source/installed/master"
+            "location": "{{__DIRNAME__}}/.deps/github.com~SensePlatform~vfs-local~0/source/installed/master"
         },
         "vfs-socket": {
             "depends": [
                 "vfs-local"
             ],
-            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~vfs-socket~0/source/installed/master"
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~vfs-socket~0/source/installed/master"
         },
         "io.pinf.pio.sync": {
             "depends": [
@@ -223,7 +223,7 @@
                 "vfs-socket",
                 "vfs-local"
             ],
-            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.sync~0/source/installed/master"
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.pio.sync~0/source/installed/master"
         },
         "pinf.io-for-openshift": {
             "depends": [
@@ -231,23 +231,23 @@
                 "io.pinf.proxy",
                 "bash.origin"
             ],
-            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master"
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master"
         },
         "pinf.io-for-ubuntu": {
             "depends": [
                 "bash.origin"
             ],
-            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master"
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master"
         },
         "pinf.io-for-unix": {
             "depends": [
                 "bash.origin",
                 "org.pinf.genesis.lib"
             ],
-            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-unix~0/source/installed/master"
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-io~pinf.io-for-unix~0/source/installed/master"
         },
         "pinf-to-process": {
-            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-process~0/source/installed/master"
+            "location": "{{__DIRNAME__}}/.deps/github.com~pinf-to~pinf-to-process~0/source/installed/master"
         }
     }
 }
