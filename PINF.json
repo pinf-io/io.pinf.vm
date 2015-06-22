@@ -30,6 +30,9 @@
             }
         }
     },
+    "boot": {
+        "config": "ScriptedCloud.PINF.Tools/boot/0"
+    },
     "config": {
         "ScriptedCloud.PINF.Tools/0": {
             "topLevelDomain": "pinf.io",
