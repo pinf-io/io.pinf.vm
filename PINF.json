@@ -84,6 +84,42 @@
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-process~0/source/installed/master": {
             "install": true
+        },
+        "io.pinf.db.postgresql": {
+            "install": true
+        },
+        "io.pinf.server.grunt": {
+            "install": true
+        },
+        "io.pinf.server.webpack": {
+            "install": true
+        },
+        "io.pinf.proxy": {
+            "install": true
+        },
+        "io.pinf.pio.postsync": {
+            "install": true
+        },
+        "vfs-local": {
+            "install": true
+        },
+        "vfs-socket": {
+            "install": true
+        },
+        "io.pinf.pio.sync": {
+            "install": true
+        },
+        "pinf.io-for-openshift": {
+            "install": true
+        },
+        "pinf.io-for-ubuntu": {
+            "install": true
+        },
+        "pinf.io-for-unix": {
+            "install": true
+        },
+        "pinf-to-process": {
+            "install": true
         }
     },
     "@overlays": [
