@@ -72,7 +72,7 @@
                 "org.pinf.lib",
                 "org.pinf.genesis.lib"
             ],
-            "location": "{{env.PGS_PACKAGES_DIRPATH}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
+            "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
             "giturl": "git@github.com:pinf-io/io.pinf.server.grunt.git",
             "install": "{{$.@args.install}}"
         }
