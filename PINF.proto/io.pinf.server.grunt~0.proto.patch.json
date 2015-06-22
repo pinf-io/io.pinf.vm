@@ -70,12 +70,13 @@
         [
             "$.mappings",
             {
-                "./../.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master": {
+                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master": {
                     "location": "{{__DIRNAME__}}/../.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
                     "install": false
                 },
                 "io.pinf.server.grunt": {
                     "depends": [
+                        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
                         "bash.origin",
                         "org.pinf.lib",
                         "org.pinf.genesis.lib"

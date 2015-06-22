@@ -49,31 +49,40 @@
         }
     },
     "mappings": {
-        "io.pinf.proxy": {
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master": {
             "install": true
         },
-        "io.pinf.pio.postsync": {
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master": {
             "install": true
         },
-        "vfs-local": {
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master": {
             "install": true
         },
-        "vfs-socket": {
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.proxy~0/source/installed/master": {
             "install": true
         },
-        "io.pinf.pio.sync": {
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.postsync~0/source/installed/master": {
             "install": true
         },
-        "pinf.io-for-openshift": {
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~SensePlatform~vfs-local~0/source/installed/master": {
             "install": true
         },
-        "pinf.io-for-ubuntu": {
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~vfs-socket~0/source/installed/master": {
             "install": true
         },
-        "pinf.io-for-unix": {
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.sync~0/source/installed/master": {
             "install": true
         },
-        "pinf-to-process": {
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master": {
+            "install": true
+        },
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master": {
+            "install": true
+        },
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-unix~0/source/installed/master": {
+            "install": true
+        },
+        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-process~0/source/installed/master": {
             "install": true
         }
     },
