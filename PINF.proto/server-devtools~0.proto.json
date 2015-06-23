@@ -1,5 +1,10 @@
 {
     "config": {
+        "github.com/pinf-to/pinf-to-openshift/0": {
+            "openshift": {
+                "cartridge": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master"
+            }
+        },
         "github.com/pinf-io/io.pinf.pio.sync/0": {
             "$to": {
                 "pio-sync-devtools": {

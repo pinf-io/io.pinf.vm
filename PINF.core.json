@@ -1,4 +1,7 @@
 {
+    "@extends": {
+        "vm.pinf.io/PINF.proto/server-services~0.smi.json": "{{__DIRNAME__}}/PINF.proto/server-services~0.smi.json"
+    },
     "config": {
         "github.com/pinf-to/pinf-to-process/0": {
             "$to": {
