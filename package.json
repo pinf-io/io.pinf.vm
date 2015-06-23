@@ -1,4 +1,5 @@
 {
+  "uid": "github.com~pinf-io~vm.pinf.io~0",
   "scripts": {
     "install": "./bin/install"
   },
