@@ -43,7 +43,6 @@
         "ScriptedCloud.PINF.Tools/boot/0": {
             "$depends": [
                 "dns",
-                "pio-sync-services",
                 "services-proxy"
             ],
             "$depends_DISABLED": [

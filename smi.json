@@ -3,7 +3,7 @@
         "github.com/pinf-to/pinf-to-process/0": {
             "$to": {
                 "services-proxy": {
-                    "basePath": "{{__DIRNAME__}}/.deps/github.com~pinf-io~io.pinf.proxy~0/source/installed/master",
+                    "basePath": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.proxy~0/source/installed/master",
                     "commands": {
                         "start": "node server.js"
                     },
@@ -326,32 +326,32 @@
             "location": "git@github.com:pinf-io/io.pinf.server.webpack.git#338601b238be616ea020e6f110cd90b1d6aacfec(master)"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/03-vm.pinf.io": {
-            "location": "git@github.com:pinf-io/io.pinf.vm.git#1c2134a3069078ddef19c3832e8984d38116f63b(wip)",
+            "location": "git@github.com:pinf-io/io.pinf.vm.git#4f3c0d2f65a7cfc8d5a79c3cc1bc05d1f30773d6(master)",
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~sourcemint~sm.resolve~0/source/installed/master": {
-            "location": "git@github.com:sourcemint/sm.resolve.git#75d02b7a530d3abb375179518371532becc54ca0(master)"
+            "location": "git@github.com:sourcemint/sm.resolve.git#34f37ffeb761ff4173138e83217bb4f39fc32071"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~bash-origin~bash.origin~0/source/installed/master": {
-            "location": "git@github.com:bash-origin/bash.origin.git#a122dd34183a64fa74bbb218a4c9958dc20226a3(master)"
+            "location": "git@github.com:bash-origin/bash.origin.git#f8ce407fa0b6d3def4295dbbd8341ef5109e58bd"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~cadorn~fswalker~0/source/installed/master": {
             "location": "git@github.com:cadorn/fswalker.git#ae378bac45dd4f3f3610b8c22256a656a7d7d772"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~sourcemint~smi~0/source/installed/master": {
-            "location": "git@github.com:sourcemint/smi.git#be33a37e64b3fa80841cfdfadc1cc7f23825e2f7(master)"
+            "location": "git@github.com:sourcemint/smi.git#2a1a68b7adde83bd8bd09881b7c4ee8874d1b890"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-it~pinf-it-package-insight~0/source/installed/master": {
             "location": "git@github.com:pinf-it/pinf-it-package-insight.git#fef2d98f43f47d2644790a4c6d91057e5492ef05"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~sourcemint~smi-for-npm~0/source/installed/master": {
-            "location": "git@github.com:sourcemint/smi-for-npm.git#f298af2ee83cb2deb63071c17fc1b9d57dfe15f2(master)"
+            "location": "git@github.com:sourcemint/smi-for-npm.git#49c8089300268d8820ebfd165bdaa4541a212b22"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~sourcemint~smi-for-git~0/source/installed/master": {
-            "location": "git@github.com:sourcemint/smi-for-git.git#5511b0b2ac1244be23cec98627c0f892002e5fea(master)"
+            "location": "git@github.com:sourcemint/smi-for-git.git#d82a0f27dace5e8083dec1b1416fde3f4f6f6e9b"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~bash-origin~bash.origin.pinf~0/source/installed/master": {
-            "location": "git@github.com:bash-origin/bash.origin.pinf.git#3b48868d20e562c0ff41a1845cf1dde87b4816d6(master)"
+            "location": "git@github.com:bash-origin/bash.origin.pinf.git#98104e050e661398f4821363e06c6dba1a249a9d"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~bash-origin~bash.origin.prompt~0/source/installed/master": {
             "location": "git@github.com:bash-origin/bash.origin.prompt.git#138ae6abd6e5ccdc8c5e01c790c9f314a935b812"
@@ -369,19 +369,20 @@
             "location": "git@github.com:pinf-to/pto-for-npm.git#6e9720ee38b6edcfc31ae7637e21c7a48491406c"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~to.pinf.lib~0/source/installed/master": {
-            "location": "git@github.com:pinf-to/to.pinf.lib.git#03c97d85fda87344064e85fe0529ac37938ad327(master)"
+            "location": "git@github.com:pinf-to/to.pinf.lib.git#03c97d85fda87344064e85fe0529ac37938ad327"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf~org.pinf.genesis.lib~0/source/installed/master": {
-            "location": "git@github.com:pinf/org.pinf.genesis.lib.git#6aad5e96e883ae1589a8b8651aa257bedfdb94b2(master)"
+            "location": "git@github.com:pinf/org.pinf.genesis.lib.git#ef69c0add168b23dcab4500b11fdb6be810a61ff"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf~org.pinf.lib~0/source/installed/master": {
-            "location": "git@github.com:pinf/org.pinf.lib.git#29ce9282ae092d373ddc282b47b02ee23c7e6b09(master)"
+            "location": "git@github.com:pinf/org.pinf.lib.git#29ce9282ae092d373ddc282b47b02ee23c7e6b09"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~sourcemint~smt-copy~0/source/installed/master": {
             "location": "git@github.com:sourcemint/smt-copy.git#07de206d61805eb785309bb08433552c9a19a0c4"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.proxy~0/source/installed/master": {
-            "location": "git@github.com:pinf-io/io.pinf.proxy.git#30d9982082be8172aefb62df873b403ed34ee7a5"
+            "location": "git@github.com:pinf-io/io.pinf.proxy.git#30d9982082be8172aefb62df873b403ed34ee7a5",
+            "alias": "io.pinf.proxy"
         },
         "io.pinf.proxy": {
             "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.proxy~0/source/installed/master",
@@ -437,32 +438,33 @@
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-process~0/source/installed/master": {
-            "location": "git@github.com:pinf-to/pinf-to-process.git#118de54b4e31eb42c7d6c7ebdde72808d8d7e12d"
+            "location": "git@github.com:pinf-to/pinf-to-process.git#118de54b4e31eb42c7d6c7ebdde72808d8d7e12d",
+            "alias": "pinf-to-process"
         },
         "pinf-to-process": {
             "location": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-process~0/source/installed/master",
             "install": false
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-openshift~0/source/installed/master": {
-            "location": "git@github.com:pinf-to/pinf-to-openshift.git#aee9d81f729a88c61070a2bd987d39d4d02c158b"
+            "location": "git@github.com:pinf-to/pinf-to-openshift.git#fd1a6b263b78d9a13e371d3a8e0a670d39c6d2ff"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-dnsimple~0/source/installed/master": {
-            "location": "git@github.com:pinf-to/pinf-to-dnsimple.git#8f2459b1515017e5bc911fceeaab0c70eacbdcca"
+            "location": "git@github.com:pinf-to/pinf-to-dnsimple.git#44c45f644999f92b36b5a8950f92ba5affb5338a"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-logic~pinf.logic-for-dns~0/source/installed/master": {
             "location": "git@github.com:pinf-logic/pinf.logic-for-dns.git#3a0f3c7cb8b6a94a2f4df807371c38e5ec7eac93"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-space~Genesis~0/source/installed/master": {
-            "location": "git@github.com:pinf-space/Genesis.git#c1bbe58864be12ce102a8c89c912da957b91e2eb"
+            "location": "git@github.com:pinf-space/Genesis.git#ed601a8cbab6ea050160691445cc69dca59ec79d"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-tools~CloudCommands~0/source/installed/master": {
             "location": "git@github.com:pinf-tools/CloudCommands.git#059d22e3ea5afaffb93d50a61e1c60f45f20e51d"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.profile~0/source/installed/master": {
-            "location": "git@github.com:pinf-io/io.pinf.pio.profile.git#10ca2538501839187cf90e4810b95ce0aaf363a9"
+            "location": "git@github.com:pinf-io/io.pinf.pio.profile.git#a5bc643758d51e22b14c7e35aa757a48c6a93b9e"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-digitalocean~0/source/installed/master": {
-            "location": "git@github.com:pinf-to/pinf-to-digitalocean.git#309ff0f6328bd35bd5aeafb088a8a8c73c7b0211"
+            "location": "git@github.com:pinf-to/pinf-to-digitalocean.git#44c1e1cd775631f71084c4d3eba202e52efe964c"
         },
         "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-travis-ci~0/source/installed/master": {
             "location": "git@github.com:pinf-to/pinf-to-travis-ci.git#d45bc6093a8776493800ed6ec3b4016a45540f8e"
@@ -479,7 +481,11 @@
     },
     "@extends": {
         "03-vm.pinf.io/PINF.core.json": {
-            "location": "{{env.PGS_PACKAGES_DIRPATH}}/03-vm.pinf.io/PINF.core.json",
+            "location": "!{{env.PGS_PACKAGES_DIRPATH}}/03-vm.pinf.io/PINF.core.json",
+            "@args": {}
+        },
+        "03-vm.pinf.io/PINF.proto/server-services~0.smi.json": {
+            "location": "!{{env.PGS_PACKAGES_DIRPATH}}/03-vm.pinf.io/PINF.proto/server-services~0.smi.json",
             "@args": {}
         }
     },
@@ -487,7 +493,7 @@
         "q": "1.4.1",
         "deepcopy": "0.5.0",
         "escape-regexp-component": "1.0.2",
-        "fs-extra": "0.18.4",
+        "fs-extra": "0.19.0",
         "graceful-fs": "3.0.8",
         "async": "0.7.0",
         "colors": "1.1.2",
