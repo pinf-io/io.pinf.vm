@@ -42,7 +42,7 @@
                     "uri": "git://git@github.com:pinf-io/pinf.io-for-unix.git",
                     "installer": "npm"
                 }
-            },
+            }
         },
         "mappings": {
             "io.pinf.pio.postsync": "github.com~pinf-io~io.pinf.pio.postsync~0/master",
@@ -51,7 +51,7 @@
             "io.pinf.pio.sync": "github.com~pinf-io~io.pinf.pio.sync~0/master",
             "pinf.io-for-openshift": "github.com~pinf-io~pinf.io-for-openshift~0/master",
             "pinf.io-for-ubuntu": "github.com~pinf-io~pinf.io-for-ubuntu~0/master",
-            "pinf.io-for-unix": "github.com~pinf-io~pinf.io-for-unix~0/master",
+            "pinf.io-for-unix": "github.com~pinf-io~pinf.io-for-unix~0/master"
         }
     }
 }
