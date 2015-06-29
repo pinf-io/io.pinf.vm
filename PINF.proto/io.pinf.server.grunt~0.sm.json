@@ -1,6 +1,5 @@
 {
     "@args": {
-        "install": false,
         "grunts": {
             "local": {},
             "remote": {}
@@ -60,21 +59,17 @@
             }
         }
     },
-    "mappings": {
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master": {
-            "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
-            "install": false
+    "@github.com~sourcemint~sm.expand~0/map": {
+        "sources": {
+            "github.com~pinf-io~io.pinf.server.grunt~0": {
+                "master": {
+                    "uri": "git://git@github.com:pinf-io/io.pinf.server.grunt.git",
+                    "installer": "npm"
+                }
+            }
         },
-        "io.pinf.server.grunt": {
-            "depends": [
-                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
-                "bash.origin",
-                "org.pinf.lib",
-                "org.pinf.genesis.lib"
-            ],
-            "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
-            "giturl": "git@github.com:pinf-io/io.pinf.server.grunt.git",
-            "install": "{{$.@args.install}}"
+        "mappings": {
+            "io.pinf.server.grunt": "github.com~pinf-io~io.pinf.server.grunt~0/master"
         }
     }
 }

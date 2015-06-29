@@ -1,6 +1,5 @@
 {
     "@args": {
-        "install": false,
         "roles": {},
         "databases": {}
     },
@@ -29,18 +28,17 @@
             }
         }
     },
-    "mappings": {
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master": {
-            "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
-            "install": false
+    "@github.com~sourcemint~sm.expand~0/map": {
+        "sources": {
+            "github.com~pinf-io~io.pinf.db.postgresql~0": {
+                "master": {
+                    "uri": "git://git@github.com:pinf-io/io.pinf.db.postgresql.git",
+                    "installer": "npm"
+                }
+            }
         },
-        "io.pinf.db.postgresql": {
-            "depends": [
-                "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master"
-            ],
-            "location": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master",
-            "giturl": "git@github.com:pinf-io/io.pinf.db.postgresql.git",
-            "install": false
+        "mappings": {
+            "io.pinf.db.postgresql": "github.com~pinf-io~io.pinf.db.postgresql~0/master"
         }
     }
 }

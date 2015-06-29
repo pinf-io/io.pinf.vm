@@ -1,0 +1,57 @@
+{
+    "@github.com~sourcemint~sm.expand~0/map": {
+        "sources": {
+            "github.com~pinf-io~io.pinf.pio.postsync~0": {
+                "master": {
+                    "uri": "git://git@github.com:pinf-io/io.pinf.pio.postsync.git",
+                    "installer": "npm"
+                }
+            },
+            "github.com~SensePlatform~vfs-local~0": {
+                "master": {
+                    "uri": "git://git@github.com:SensePlatform/vfs-local.git",
+                    "installer": "npm"
+                }
+            },
+            "github.com~pinf-io~vfs-socket~0": {
+                "master": {
+                    "uri": "git://git@github.com:pinf-io/vfs-socket.git",
+                    "installer": "npm"
+                }
+            },
+            "github.com~pinf-io~io.pinf.pio.sync~0": {
+                "master": {
+                    "uri": "git://git@github.com:pinf-io/io.pinf.pio.sync.git",
+                    "installer": "npm"
+                }
+            },
+            "github.com~pinf-io~pinf.io-for-openshift~0": {
+                "master": {
+                    "uri": "git://git@github.com:pinf-io/pinf.io-for-openshift.git",
+                    "installer": "npm"
+                }
+            },
+            "github.com~pinf-io~pinf.io-for-ubuntu~0": {
+                "master": {
+                    "uri": "git://git@github.com:pinf-io/pinf.io-for-ubuntu.git",
+                    "installer": "npm"
+                }
+            },
+            "github.com~pinf-io~pinf.io-for-unix~0": {
+                "master": {
+                    "uri": "git://git@github.com:pinf-io/pinf.io-for-unix.git",
+                    "installer": "npm"
+                }
+            },
+        },
+        "mappings": {
+            "io.pinf.pio.postsync": "github.com~pinf-io~io.pinf.pio.postsync~0/master",
+            "vfs-local": "github.com~SensePlatform~vfs-local~0/master",
+            "vfs-socket": "github.com~pinf-io~vfs-socket~0/master",
+            "io.pinf.pio.sync": "github.com~pinf-io~io.pinf.pio.sync~0/master",
+            "pinf.io-for-openshift": "github.com~pinf-io~pinf.io-for-openshift~0/master",
+            "pinf.io-for-ubuntu": "github.com~pinf-io~pinf.io-for-ubuntu~0/master",
+            "pinf.io-for-unix": "github.com~pinf-io~pinf.io-for-unix~0/master",
+        }
+    }
+}

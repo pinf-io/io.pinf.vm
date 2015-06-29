@@ -2,31 +2,25 @@
     "@extends": {
         "ScriptedCloud": "{{__DIRNAME__}}/../03-pinf.tools.ScriptedCloud/PINF.proto.json",
         "vm.pinf.io": "{{__DIRNAME__}}/PINF.proto.json",
-        "to.pinf.dnsimple": {
-            "location": "{{__DIRNAME__}}/../03-pinf.tools.ScriptedCloud/PINF.proto/to.pinf.dnsimple.proto.patch.json"
-        },
         "io.pinf.db.postgresql": {
-            "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.db.postgresql~0.proto.patch.json",
+            "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.db.postgresql~0.sm.json",
             "@args": {
                 "PGS_WORKSPACE_ROOT": "{{env.PGS_WORKSPACE_ROOT}}",
-                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}",
-                "install": true
+                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}"
             }
         },
         "io.pinf.server.grunt": {
-            "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.server.grunt~0.proto.patch.json",
+            "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.server.grunt~0.sm.json",
             "@args": {
                 "PGS_WORKSPACE_ROOT": "{{env.PGS_WORKSPACE_ROOT}}",
-                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}",
-                "install": true
+                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}"
             }
         },
         "io.pinf.server.webpack": {
-            "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.server.webpack~0.proto.patch.json",
+            "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.server.webpack~0.sm.json",
             "@args": {
                 "PGS_WORKSPACE_ROOT": "{{env.PGS_WORKSPACE_ROOT}}",
-                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}",
-                "install": true
+                "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}"
             }
         }
     },
@@ -48,80 +42,6 @@
             "$depends_DISABLED": [
                 "pio-sync-devtools"
             ]
-        }
-    },
-    "mappings": {
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.db.postgresql~0/source/installed/master": {
-            "install": true
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master": {
-            "install": true
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master": {
-            "install": true
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.proxy~0/source/installed/master": {
-            "install": true
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.postsync~0/source/installed/master": {
-            "install": true
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~SensePlatform~vfs-local~0/source/installed/master": {
-            "install": true
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~vfs-socket~0/source/installed/master": {
-            "install": true
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.pio.sync~0/source/installed/master": {
-            "install": true
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-openshift~0/source/installed/master": {
-            "install": true
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-ubuntu~0/source/installed/master": {
-            "install": true
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~pinf.io-for-unix~0/source/installed/master": {
-            "install": true
-        },
-        "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-to~pinf-to-process~0/source/installed/master": {
-            "install": true
-        },
-        "io.pinf.db.postgresql": {
-            "install": true
-        },
-        "io.pinf.server.grunt": {
-            "install": true
-        },
-        "io.pinf.server.webpack": {
-            "install": true
-        },
-        "io.pinf.proxy": {
-            "install": true
-        },
-        "io.pinf.pio.postsync": {
-            "install": true
-        },
-        "vfs-local": {
-            "install": true
-        },
-        "vfs-socket": {
-            "install": true
-        },
-        "io.pinf.pio.sync": {
-            "install": true
-        },
-        "pinf.io-for-openshift": {
-            "install": true
-        },
-        "pinf.io-for-ubuntu": {
-            "install": true
-        },
-        "pinf.io-for-unix": {
-            "install": true
-        },
-        "pinf-to-process": {
-            "install": true
         }
     },
     "@overlays": [
