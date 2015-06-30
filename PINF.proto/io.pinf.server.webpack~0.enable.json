@@ -1,0 +1,58 @@
+{
+    "@args": {
+        "packs": {
+            "local": {},
+            "remote": {}
+        }
+    },
+    "config": {
+        "github.com/pinf-to/pinf-to-process/0": {
+            "$to": {
+                "webpack-service": {
+                    "basePath": "{{__DIRNAME2__}}/.deps/github.com~pinf-io~io.pinf.server.webpack~0/source/installed/master",
+                    "commands": {
+                        "start": "./bin/run-dev-server"
+                    },
+                    "boot": {
+                        "config": "io.pinf.server.webpack/0"
+                    },
+                    "config": {
+                        "io.pinf.server.webpack/0": {
+                            "port": 8084,
+                            "bind": "127.0.0.1",
+                            "packs": "{{$.@args.packs.local}}"
+                        }
+                    }
+                }
+            }
+        },
+        "github.com/pinf-io/io.pinf.pio.sync/0": {
+            "$to": {
+                "pio-sync-services": {
+                    "services": {
+                        "io.pinf.server.webpack": {
+                            "depends": [
+                                "bash.origin",
+                                "io.pinf.pio.postsync",
+                                "org.pinf.genesis.lib",
+                                "org.pinf.lib",
+                                "io.pinf.proxy"
+                            ],
+                            "location": "{{env.PGS_WORKSPACE_ROOT}}/node_modules/io.pinf.server.webpack",
+                            "boot": {
+                                "config": "io.pinf.server.webpack/0"
+                            },
+                            "config": {
+                                "io.pinf.server.webpack/0": {
+                                    "port": 8084,
+                                    "bind": "{{$from.server-services.vm.ip}}",
+                                    "packs": "{{$.@args.packs.remote}}"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "@args": {
+        "roles": {},
+        "databases": {}
+    },
+    "config": {
+        "github.com/pinf-io/io.pinf.pio.sync/0": {
+            "$to": {
+                "pio-sync-services": {
+                    "services": {
+                        "io.pinf.db.postgresql": {
+                            "depends": [
+                                "bash.origin",
+                                "io.pinf.pio.postsync"
+                            ],
+                            "location": "{{env.PGS_WORKSPACE_ROOT}}/node_modules/io.pinf.db.postgresql",
+                            "config": {
+                                "io.pinf.db.postgresql/0": {
+                                    "port": 8089,
+                                    "bind": "{{$from.server-services.vm.ip}}",
+                                    "roles": "{{$.@args.roles}}",
+                                    "databases": "{{$.@args.databases}}"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

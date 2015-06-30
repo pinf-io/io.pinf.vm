@@ -1,64 +1,4 @@
 {
-    "@args": {
-        "grunts": {
-            "local": {},
-            "remote": {}
-        }
-    },
-    "config": {
-        "github.com/pinf-to/pinf-to-process/0": {
-            "$to": {
-                "grunt-service": {
-                    "basePath": "{{env.PGS_PACKAGES_DIRPATH}}/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master",
-                    "commands": {
-                        "start": "./bin/run-dev-server"
-                    },
-                    "boot": {
-                        "config": "io.pinf.server.grunt/0"
-                    },
-                    "env": {
-                        "VERBOSE": "1",
-                        "DEBUG": "1"
-                    },
-                    "config": {
-                        "io.pinf.server.grunt/0": {
-                            "port": 8083,
-                            "bind": "127.0.0.1",
-                            "grunts": "{{$.@args.grunts.local}}"
-                        }
-                    }
-                }
-            }
-        },
-        "github.com/pinf-io/io.pinf.pio.sync/0": {
-            "$to": {
-                "pio-sync-services": {
-                    "services": {
-                        "io.pinf.server.grunt": {
-                            "depends": [
-                                "bash.origin",
-                                "io.pinf.pio.postsync",
-                                "org.pinf.genesis.lib",
-                                "org.pinf.lib",
-                                "io.pinf.proxy"
-                            ],
-                            "location": "{{env.PGS_WORKSPACE_ROOT}}/node_modules/io.pinf.server.grunt",
-                            "boot": {
-                                "config": "io.pinf.server.grunt/0"
-                            },
-                            "config": {
-                                "io.pinf.server.grunt/0": {
-                                    "port": 8083,
-                                    "bind": "{{$from.server-services.vm.ip}}",
-                                    "grunts": "{{$.@args.grunts.remote}}"
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    },
     "@github.com~sourcemint~sm.expand~0/map": {
         "sources": {
             "github.com~pinf-io~io.pinf.server.grunt~0": {
@@ -66,10 +6,17 @@
                     "uri": "git://git@github.com:pinf-io/io.pinf.server.grunt.git",
                     "installer": "npm"
                 }
+            },
+            "github.com~sapegin~grunt-bower-concat~0": {
+                "master": {
+                    "uri": "git://git@github.com:sapegin/grunt-bower-concat.git",
+                    "installer": "npm"
+                }
             }
         },
         "mappings": {
-            "io.pinf.server.grunt": "github.com~pinf-io~io.pinf.server.grunt~0/master"
+            "io.pinf.server.grunt": "github.com~pinf-io~io.pinf.server.grunt~0/master",
+            "grunt-bower-concat": "github.com~sapegin~grunt-bower-concat~0/master"
         }
     }
 }

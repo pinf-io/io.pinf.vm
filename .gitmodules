@@ -34,3 +34,6 @@
 [submodule ".deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master"]
 	path = .deps/github.com~pinf-io~io.pinf.server.grunt~0/source/installed/master
 	url = git@github.com:pinf-io/io.pinf.server.grunt.git
+[submodule ".deps/github.com~sapegin~grunt-bower-concat~0/source/installed/master"]
+	path = .deps/github.com~sapegin~grunt-bower-concat~0/source/installed/master
+	url = git@github.com:sapegin/grunt-bower-concat.git
