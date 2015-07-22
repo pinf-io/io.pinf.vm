@@ -1,0 +1,15 @@
+{
+    "@github.com~sourcemint~sm.expand~0/map": {
+        "sources": {
+            "github.com~pinf-io~io.pinf.service.mandrill~0": {
+                "master": {
+                    "uri": "git://git@github.com:pinf-io/io.pinf.service.mandrill.git",
+                    "installer": "npm"
+                }
+            }
+        },
+        "mappings": {
+            "io.pinf.service.mandrill": "github.com~pinf-io~io.pinf.service.mandrill~0/master"
+        }
+    }
+}

@@ -38,7 +38,7 @@
                             "depends": [
                                 "io.pinf.pio.postsync"
                             ],
-                            "location": "grunt-bower-concat"
+                            "location": "{{env.PGS_WORKSPACE_ROOT}}/node_modules/grunt-bower-concat"
                         },
                         "io.pinf.server.grunt": {
                             "depends": [

@@ -22,6 +22,12 @@
                 "PGS_WORKSPACE_ROOT": "{{env.PGS_WORKSPACE_ROOT}}",
                 "PGS_PACKAGES_DIRPATH": "{{env.PGS_PACKAGES_DIRPATH}}"
             }
+        },
+        "io.pinf.service.mandrill/sm": {
+            "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.service.mandrill~0.sm.json"
+        },
+        "io.pinf.service.twilio/sm": {
+            "location": "{{__DIRNAME__}}/PINF.proto/io.pinf.service.twilio~0.sm.json"
         }
     },
     "boot": {

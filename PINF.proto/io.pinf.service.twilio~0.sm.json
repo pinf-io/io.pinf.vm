@@ -1,0 +1,15 @@
+{
+    "@github.com~sourcemint~sm.expand~0/map": {
+        "sources": {
+            "github.com~pinf-io~io.pinf.service.twilio~0": {
+                "master": {
+                    "uri": "git://git@github.com:pinf-io/io.pinf.service.twilio.git",
+                    "installer": "npm"
+                }
+            }
+        },
+        "mappings": {
+            "io.pinf.service.twilio": "github.com~pinf-io~io.pinf.service.twilio~0/master"
+        }
+    }
+}
