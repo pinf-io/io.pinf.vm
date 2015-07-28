@@ -71,9 +71,13 @@
                                 }
                             }
                         },
+                        "pinf.logic-for-json": {
+                            "location": "pinf.logic-for-json"
+                        },
                         "org.pinf.lib": {
                             "depends": [
-                                "smi-for-npm"
+                                "smi-for-npm",
+                                "pinf.logic-for-json"
                             ],
                             "location": "org.pinf.lib"
                         },
@@ -164,7 +168,9 @@
                                         }
                                     },
                                     "vhosts": {
-                                        "io-pinf-pio-sync-vfs-socket.{{$from.system.hostname}}": "{{$from.server-services.vm.ip}}:8086"
+                                        "io-pinf-pio-sync-vfs-socket.{{$from.system.hostname}}": {
+                                            "backend": "{{$from.server-services.vm.ip}}:8086"
+                                        }
                                     }
                                 },
                                 "org.pinf.genesis.lib/0": {

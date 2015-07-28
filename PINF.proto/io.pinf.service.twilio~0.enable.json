@@ -1,0 +1,25 @@
+{
+    "@args": {
+    },
+    "config": {
+        "github.com/pinf-io/io.pinf.pio.sync/0": {
+            "$to": {
+                "pio-sync-services": {
+                    "services": {
+                        "io.pinf.service.twilio": {
+                            "depends": [
+                                "io.pinf.pio.postsync",
+                                "org.pinf.genesis.lib"
+                            ],
+                            "location": "{{env.PGS_WORKSPACE_ROOT}}/node_modules/io.pinf.service.twilio",
+                            "config": {
+                                "io.pinf.service.twilio/0": {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
