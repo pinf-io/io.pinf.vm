@@ -27,8 +27,7 @@
             },
             "github.com~pinf-io~pinf.io-for-openshift~0": {
                 "master": {
-                    "uri": "git://git@github.com:pinf-io/pinf.io-for-openshift.git",
-                    "installer": "npm"
+                    "uri": "git://git@github.com:pinf-io/pinf.io-for-openshift.git"
                 }
             },
             "github.com~pinf-io~pinf.io-for-ubuntu~0": {
